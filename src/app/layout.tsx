@@ -3,6 +3,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/common/Footer";
+import { Inter } from "next/font/google"
+
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+})
 
 const lato = localFont({
   src: [
@@ -51,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lato.className} ${lato.variable} antialiased`}
+        className={`${inter.className} ${inter.variable} antialiased`}
       >
         <Header />
         {children}

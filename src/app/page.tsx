@@ -16,7 +16,6 @@ export default function Home() {
           loop
           muted
         />
-
         <div className="hidden md:block absolute top-0 w-full max-w-[1440px] h-full bg-gradient-to-b from-[rgba(0,38,70,0)] via-[rgba(0,38,70,0.3)] to-[rgba(0,38,70,0.9)]"></div>
 
         <div className="relative md:absolute bg-black md:bg-transparent w-full lg:w-[81%] bottom-0 p-4 sm:p-12 md:pl-[72px] md:pb-[58px]">
@@ -62,21 +61,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* <div className="relative">
-          <div className="w-full h-[24vh] md:h-[40vh] lg:h-[400px] bg-[url('/homepage/homepageImage4.jpg')] bg-no-repeat bg-center bg-cover">
-            <div className="h-full w-full bg-gradient-to-b from-[rgba(0,0,0,0)] from-10% via-[rgba(0,0,0,0)] via-30% to-[rgba(0,0,0,0.75)] to-90%"></div>
-          </div>
-          <div className="relative md:absolute bg-black md:bg-transparent w-full lg:w-[81%] bottom-0 p-4 sm:p-12 md:pl-14 md:pb-14">
-            <div className="text-2xl sm:text-[28px] text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </div>
-            <button className="flex p-4 gap-4 items-center mt-8 text-[#0360AE] bg-white">
-              <div>Chi tiết</div>
-              <IcArrowRight />
-            </button>
-          </div>
-        </div> */}
       </div>
 
       <div className="bg-[#f6f6f6]">
@@ -135,9 +119,9 @@ export default function Home() {
       </div>
 
       <div className="py-24 container grid grid-cols-1 md:grid-cols-3 gap-8">
-        <Image src="/homepage/banner1.png" alt="banner" layout="responsive" width={400} height={400} />
-        <Image src="/homepage/banner2.png" alt="banner" layout="responsive" width={400} height={400} />
-        <Image src="/homepage/banner1.png" alt="banner" layout="responsive" width={400} height={400} />
+        <Image src="/homepage/banner1.png" alt="banner" width={400} height={400} />
+        <Image src="/homepage/banner2.png" alt="banner" width={400} height={400} />
+        <Image src="/homepage/banner1.png" alt="banner" width={400} height={400} />
       </div>
 
       <div className="bg-[#f6f6f6]">
