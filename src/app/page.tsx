@@ -4,6 +4,7 @@ import { IcArrowRight } from "@/components/common/resources/icons/IcArrowRight";
 import MembersSwiper from "@/components/pages/home-page/MembersSwiper";
 import { IcCircleArrowLeft } from "@/components/common/resources/icons/IcCircleArrowLeft";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -74,54 +75,84 @@ export default function Home() {
             </div>
           </div>
           <div className="grid md:container mt-16 h-[100vh] md:h-[50vh] md:grid-cols-5">
-            <div className="overflow-hidden relative flex flex-col py-14 px-6 justify-between items-center group">
+            <Link
+              href="business/defense-related-products-trading"
+              className="overflow-hidden relative flex flex-col py-14 px-6 justify-between items-center group"
+            >
               <div className="h-full absolute z-[1] w-full top-0 bg-gradient-to-t from-[rgba(0,0,0,0)] from-10% via-[rgba(0,0,0,0)] via-30% to-[rgba(0,0,0,0.75)] to-90%"></div>
               <div className="h-full absolute w-full top-0 bg-[url('/homepage/business/business1.png')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"></div>
               <div className="text-white text-[28px] z-[1] font-semibold text-center">
                 Thương mại quân sự
               </div>
               <IcCircleArrowLeft className="text-[#0360AE] rotate-180 hidden md:block" />
-            </div>
-            <div className="overflow-hidden relative flex flex-col py-14 px-6 justify-between items-center group">
+            </Link>
+            <Link
+              href="business/industrial-explosive-materials-trading"
+              className="overflow-hidden relative flex flex-col py-14 px-6 justify-between items-center group"
+            >
               <div className="h-full absolute z-[1] w-full top-0 bg-gradient-to-t from-[rgba(0,0,0,0)] from-10% via-[rgba(0,0,0,0)] via-30% to-[rgba(0,0,0,0.75)] to-90%"></div>
               <div className="h-full absolute w-full top-0 bg-[url('/homepage/business/business2.png')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"></div>
               <div className="text-white text-[28px] z-[1] font-semibold text-center">
                 Kinh doanh vật liệu nổ công nghiệp
               </div>
               <IcCircleArrowLeft className="text-[#0360AE] rotate-180 hidden md:block" />
-            </div>
-            <div className="overflow-hidden relative flex flex-col py-14 px-6 justify-between items-center group">
+            </Link>
+            <Link
+              href="business/foreign-relation-activities-in-defense-sector"
+              className="overflow-hidden relative flex flex-col py-14 px-6 justify-between items-center group"
+            >
               <div className="h-full absolute z-[1] w-full top-0 bg-gradient-to-t from-[rgba(0,0,0,0)] from-10% via-[rgba(0,0,0,0)] via-30% to-[rgba(0,0,0,0.75)] to-90%"></div>
               <div className="h-full absolute w-full top-0 bg-[url('/homepage/business/business3.png')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"></div>
               <div className="text-white text-[28px] z-[1] font-semibold text-center">
                 Hoạt động đối ngoại quốc phòng
               </div>
               <IcCircleArrowLeft className="text-[#0360AE] rotate-180 hidden md:block" />
-            </div>
-            <div className="overflow-hidden relative flex flex-col py-14 px-6 justify-between items-center group">
+            </Link>
+            <Link
+              href="business/import-export-and-trading-of-civilian-products"
+              className="overflow-hidden relative flex flex-col py-14 px-6 justify-between items-center group"
+            >
               <div className="h-full absolute z-[1] w-full top-0 bg-gradient-to-t from-[rgba(0,0,0,0)] from-10% via-[rgba(0,0,0,0)] via-30% to-[rgba(0,0,0,0.75)] to-90%"></div>
               <div className="h-full absolute w-full top-0 bg-[url('/homepage/business/business4.png')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"></div>
               <div className="text-white text-[28px] z-[1] font-semibold text-center">
                 XNK và kinh doanh các mặt hàng kinh tế
               </div>
               <IcCircleArrowLeft className="text-[#0360AE] rotate-180 hidden md:block" />
-            </div>
-            <div className="overflow-hidden relative flex flex-col py-14 px-6 justify-between items-center group">
+            </Link>
+            <Link
+              href="business/other-activities"
+              className="overflow-hidden relative flex flex-col py-14 px-6 justify-between items-center group"
+            >
               <div className="h-full absolute z-[1] w-full top-0 bg-gradient-to-t from-[rgba(0,0,0,0)] from-10% via-[rgba(0,0,0,0)] via-30% to-[rgba(0,0,0,0.75)] to-90%"></div>
               <div className="h-full absolute w-full top-0 bg-[url('/homepage/business/business5.png')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"></div>
               <div className="text-white text-[28px] z-[1] font-semibold text-center">
                 Các lĩnh vực khác
               </div>
               <IcCircleArrowLeft className="text-[#0360AE] rotate-180 hidden md:block" />
-            </div>
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="py-24 container grid grid-cols-1 md:grid-cols-3 gap-8">
-        <Image src="/homepage/banner1.png" alt="banner" width={400} height={400} />
-        <Image src="/homepage/banner2.png" alt="banner" width={400} height={400} />
-        <Image src="/homepage/banner1.png" alt="banner" width={400} height={400} />
+        <Image
+          src="/homepage/banner1.png"
+          alt="banner"
+          width={400}
+          height={400}
+        />
+        <Image
+          src="/homepage/banner2.png"
+          alt="banner"
+          width={400}
+          height={400}
+        />
+        <Image
+          src="/homepage/banner1.png"
+          alt="banner"
+          width={400}
+          height={400}
+        />
       </div>
 
       <div className="bg-[#f6f6f6]">
@@ -140,39 +171,38 @@ export default function Home() {
       </div>
 
       <div className="py-24 container">
-          <div className="flex justify-between items-center">
-            <div className="font-semibold text-[28px]">Thư viện video</div>
-            <p className="underline">Xem tất cả</p>
-          </div>
-          <div className="h-1 w-40 bg-[#0360AE]"></div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10 mt-8">
-            <iframe
-              className="w-full aspect-video"
-              src="https://www.youtube.com/embed/SDPcu3Bfqsc?si=hMCfxlJXu1ytOo2Y&modestbranding=0"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-            <iframe
-              className="w-full aspect-video"
-              src="https://www.youtube.com/embed/SDPcu3Bfqsc?si=hMCfxlJXu1ytOo2Y&modestbranding=0"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-            <iframe
-              className="w-full aspect-video"
-              src="https://www.youtube.com/embed/SDPcu3Bfqsc?si=hMCfxlJXu1ytOo2Y&modestbranding=0"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
+        <div className="flex justify-between items-center">
+          <div className="font-semibold text-[28px]">Thư viện video</div>
+          <p className="underline">Xem tất cả</p>
         </div>
-
+        <div className="h-1 w-40 bg-[#0360AE]"></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10 mt-8">
+          <iframe
+            className="w-full aspect-video"
+            src="https://www.youtube.com/embed/SDPcu3Bfqsc?si=hMCfxlJXu1ytOo2Y&modestbranding=0"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+          <iframe
+            className="w-full aspect-video"
+            src="https://www.youtube.com/embed/SDPcu3Bfqsc?si=hMCfxlJXu1ytOo2Y&modestbranding=0"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+          <iframe
+            className="w-full aspect-video"
+            src="https://www.youtube.com/embed/SDPcu3Bfqsc?si=hMCfxlJXu1ytOo2Y&modestbranding=0"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
 
       <div className="bg-[#f6f6f6]">
         <div className="py-24 container flex flex-col items-center">

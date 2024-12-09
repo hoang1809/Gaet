@@ -67,7 +67,16 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+			concac: {
+        center: true,
+        screens: {
+          lg: '1472px',
+        },
+        padding: {
+          DEFAULT: '16px',
+        },
+      },
   	}
   },
   plugins: [require("tailwindcss-animate"), function ({ addComponents }: { addComponents: (components: any) => void }) {
