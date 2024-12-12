@@ -13,17 +13,17 @@ export const Header = () => {
         <HeaderMobile />
         </div>
         <Link href="/">
-          <Image alt="logo" src="/Logo.svg" width={50} height={56} />
+          <Image alt="logo" src="/Logo.png" width={50} height={56} />
         </Link>
-        <div className="hidden md:flex gap-x-8 text-base">
-          <Link href="#">Trang chủ</Link>
-          <Link href="#">Giới thiệu</Link>
-          <Link href="#">Lĩnh vực hoạt động</Link>
-          <Link href="#">Tin tức</Link>
-          <Link href="#">Pháo hoa</Link>
-          <Link href="#">Thư viện</Link>
-          <Link href="#">Liên hệ </Link>
-          <Link href="#">Vietnam defence 2024</Link>
+        <div className="hidden md:flex gap-x-8 text-lg">
+          <Link className="hover:text-primary" href="#">Trang chủ</Link>
+          <Link className="hover:text-primary" href="#">Giới thiệu</Link>
+          <Link className="hover:text-primary" href="#">Lĩnh vực hoạt động</Link>
+          <Link className="hover:text-primary" href="#">Tin tức</Link>
+          <Link className="hover:text-primary" href="#">Pháo hoa</Link>
+          <Link className="hover:text-primary" href="#">Thư viện</Link>
+          <Link className="hover:text-primary" href="#">Liên hệ </Link>
+          <Link className="hover:text-primary" href="#">Vietnam defence 2024</Link>
         </div>
         <div className="flex gap-x-8">
           <button className="hidden md:block">

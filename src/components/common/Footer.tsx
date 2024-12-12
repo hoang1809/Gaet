@@ -55,7 +55,7 @@ const siteMap = [
 
 export const Footer = () => {
   return (
-    <div>
+    <div className="text-lg">
       <div className="bg-black text-white">
         <div className="container py-24 grid grid-cols-2 md:grid-cols-5 gap-16">
           {siteMap.map((category) => (
@@ -63,7 +63,7 @@ export const Footer = () => {
               <div className="mb-6 text-2xl font-medium">
                 {category.category}
               </div>
-              <div className="space-y-4 flex flex-col">
+              <div className="space-y-4 text-lg flex flex-col">
                 {category.item.map((item) => (
                   <Link href={item.link} key={item.title}>
                     {item.title}
@@ -78,7 +78,7 @@ export const Footer = () => {
         <div className="container py-12 flex gap-y-8 justify-between flex-wrap">
           <div>
             <Link href="/">
-              <Image alt="logo" src="/Logo.svg" width={50} height={56} />
+              <Image className="mb-6" alt="logo" src="/Logo.png" width={50} height={56} />
             </Link>
             <div className="mb-4">Tổng cục Công nghiệp Quốc phòng</div>
             <div>Tổng Công ty Kinh tế Kỹ thuật Công nghiệp Quốc (GAET)</div>

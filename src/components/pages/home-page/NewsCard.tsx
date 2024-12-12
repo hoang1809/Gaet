@@ -2,7 +2,7 @@ import React from "react";
 
 export const NewsCard = () => {
   return (
-    <div className="space-y-4 min-w-80 md:min-w-[380px]">
+    <div className="space-y-4 text-lg min-w-80 md:min-w-[380px]">
       <img className="aspect-[458/284] bg-blue-400" src="/homepage/homepageImage2.jpg"></img>
       <div>Tin tức nổi bật; Tin tức nội bộ</div>
       <div className="text-[#888888]">04/11/2024</div>
