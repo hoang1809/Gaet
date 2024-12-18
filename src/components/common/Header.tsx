@@ -1,12 +1,9 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { HeaderMobile } from "./HeaderMobile";
 import { IcGlobal } from "./resources/icons/IcGlobal";
 import { IcSearch } from "./resources/icons/IcSearch";
-import { HeaderMobile } from "./HeaderMobile";
-import { usePathname } from "next/navigation";
-import { NavigationMenuItems } from "./NavigationMenuItems";
 
 const menuContent = [
   {
@@ -14,30 +11,22 @@ const menuContent = [
     href: "/",
     subContent: [
       {
-        label: "Map",
-        href: "/map",
+        label: "Bản đồ",
+        href: "/gioi-thieu",
       },
-      {
-        label: "2",
-        href: "#",
-      },
-      {
-        label: "3",
-        href: "#",
-      },
-    ]
+    ],
   },
   {
     label: "Giới thiệu",
-    href: "#",
+    href: "/gioi-thieu",
   },
   {
     label: "Lĩnh vực hoạt động",
-    href: "#",
+    href: "/#linh-vuc-hoat-dong",
   },
   {
     label: "Tin tức",
-    href: "#",
+    href: "#tin-tuc",
   },
   {
     label: "Pháo hoa",
@@ -58,7 +47,7 @@ const menuContent = [
 ];
 
 export const Header = () => {
-  const path = usePathname()
+  // const path = usePathname();
   return (
     <div className="bg-white w-full sticky top-0 h-20 z-10">
       <div className="container flex justify-between items-center h-full">
@@ -68,7 +57,18 @@ export const Header = () => {
         <Link href="/">
           <Image alt="logo" src="/Logo.png" width={50} height={56} />
         </Link>
-        <NavigationMenuItems />
+        {/* <NavigationMenuItems /> */}
+        <div className="hidden md:flex gap-x-8 text-base">
+          {menuContent.map((item, index) => (
+            <Link
+              key={index}
+              className="text-lg hover:text-primary font-normal"
+              href={item.href}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
         <div className="flex gap-x-8">
           <button className="hidden md:block">
             <IcGlobal />

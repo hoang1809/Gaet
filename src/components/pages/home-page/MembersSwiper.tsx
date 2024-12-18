@@ -1,13 +1,13 @@
 'use client';
-import { Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { IcCircleArrowLeft } from '@/components/common/resources/icons/IcCircleArrowLeft';
 import { cn } from '@/lib/utils';
+import { useId } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { useId } from 'react';
+import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { SwiperOptions } from 'swiper/types';
-import { IcCircleArrowLeft } from '@/components/common/resources/icons/IcCircleArrowLeft';
 
 type Props = {
   slides: string[];

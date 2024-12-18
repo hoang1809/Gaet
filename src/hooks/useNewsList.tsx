@@ -1,9 +1,9 @@
-import { getBusinessDetail } from '@/apis/businessApi';
-import { Business } from '@/types/business.interface';
+import { getNewsList } from '@/apis/newsApi';
+import { News } from '@/types';
 import { useEffect, useState } from 'react';
 
-export const useBusinessDetail = (slug:string) => {
-  const [data, setData] = useState<Business>();
+export const useNewsList = () => {
+  const [data, setData] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
 
@@ -12,7 +12,7 @@ export const useBusinessDetail = (slug:string) => {
       setIsLoading(true);
       setIsError(false);
       try {
-        const result = await getBusinessDetail(slug);
+        const result = await getNewsList();
         setData(result);
       } catch (error) {
         setIsError(true);

@@ -1,4 +1,4 @@
-type ImageFormat = {
+export type ImageFormat = {
   ext: string;
   url: string;
   hash: string;
@@ -11,7 +11,7 @@ type ImageFormat = {
   sizeInBytes: number;
 };
 
-type Image = {
+export type Image = {
   id: number;
   documentId: string;
   name: string;
@@ -38,7 +38,7 @@ type Image = {
   publishedAt: string;
 };
 
-type RelatedItem = {
+export type RelatedItem = {
   __type: string;
   id: number;
   documentId: string;
@@ -49,7 +49,7 @@ type RelatedItem = {
   publishedAt: string;
 };
 
-type CoverImage = Image & {
+export type CoverImage = Image & {
   related: RelatedItem[];
 };
 
@@ -62,13 +62,13 @@ export interface ParagraphChild {
 }
 
 
-type Paragraph = {
+export type Paragraph = {
   type: string;
   format?: string;
   children: ParagraphChild[];
 };
 
-type File ={
+export type File ={
   id: number;
   documentId: string;
   name: string;
@@ -90,19 +90,19 @@ type File ={
   publishedAt: string; // ISO date string
 }
 
-type ArticleParagraph = {
+export type ArticleParagraph = {
   __component: "article.paragraph";
   id: number;
   paragraph: Paragraph[];
 };
 
-type ArticleSingleImage = {
+export type ArticleSingleImage = {
   __component: "article.single-image";
   id: number;
   image: Image;
 };
 
-type ArticleMultipleImages = {
+export type ArticleMultipleImages = {
   __component: "article.multiple-images";
   id: number;
   images: Image[];
@@ -114,7 +114,7 @@ export interface ArticleFile {
   file: File;
 }
 
-export type BusinessContent = ArticleParagraph | ArticleSingleImage | ArticleMultipleImages | ArticleFile;
+export type ArticleContent = ArticleParagraph | ArticleSingleImage | ArticleMultipleImages | ArticleFile;
 
 export type Business = {
   id: number;
@@ -125,5 +125,5 @@ export type Business = {
   updatedAt: string;
   publishedAt: string;
   Cover_image?: CoverImage;
-  content: BusinessContent[];
+  content: ArticleContent[];
 };

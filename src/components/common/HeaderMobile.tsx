@@ -1,12 +1,8 @@
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
-  SheetTitle,
-  SheetTrigger,
+  SheetTrigger
 } from "@/components/ui/sheet";
 import Link from "next/link";
 import { IcMenu } from "./resources/icons/IcMenu";

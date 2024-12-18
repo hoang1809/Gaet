@@ -1,6 +1,5 @@
-import React from "react";
-import HomepageSwiper from "../Swiper";
 import { IcArrowRight } from "@/components/common/resources/icons/IcArrowRight";
+import OutstandingNews from "../OutstandingNews";
 
 const HeroSection = () => {
   return (
@@ -32,32 +31,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="container py-28 space-y-24">
-        <div>
-          <div className="flex justify-between items-end">
-            <div>
-              <div className="font-medium text-2xl">Tin tức nổi bật</div>
-            </div>
-            <p className="underline underline-offset-2 text-lg">Xem tất cả</p>
-          </div>
-          <div className="h-1 w-[120px] mt-2 bg-primary"></div>
-          <div className="grid grid-cols-2 w-full mt-6 gap-x-16 gap-y-5">
-            <div className="flex flex-col col-span-2 lg:col-span-1 justify-end">
-              <div className="font-medium text-2xl mb-4">
-                Kinh doanh vật liệu nổ công nghiệp
-              </div>
-              <p className="text-lg text-[#888888]">1/11/2024</p>
-              <button className="flex p-4 w-fit gap-4 items-center font-semibold mt-6 text-white bg-primary text-lg">
-                <div>Chi tiết</div>
-                <IcArrowRight />
-              </button>
-            </div>
-            <div className="w-full col-span-2 lg:col-span-1 aspect-[688/400]">
-              <HomepageSwiper />
-            </div>
-          </div>
-        </div>
-      </div>
+      <OutstandingNews />
     </>
   );
 };

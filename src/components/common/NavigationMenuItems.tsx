@@ -20,7 +20,7 @@ const menuContent = [
     subContent: [
       {
         label: "Bản đồ",
-        href: "/map",
+        href: "/gioi-thieu",
       },
     ],
   },

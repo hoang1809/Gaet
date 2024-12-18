@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { API_URL } from '@/constant/app';
+
 export const getBusinessDetail = async (slug:string) => {
   try {
     const response = await axios.get(

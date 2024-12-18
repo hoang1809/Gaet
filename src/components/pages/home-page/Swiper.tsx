@@ -1,77 +1,73 @@
 "use client";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { cn } from "@/lib/utils";
 
+import { IcArrowRight } from "@/components/common/resources/icons/IcArrowRight";
+import { IcCircleArrowLeft } from "@/components/common/resources/icons/IcCircleArrowLeft";
+import { API_URL } from "@/constant/app";
+import { News } from "@/types";
+import dayjs from "dayjs";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useId } from "react";
-import { SwiperOptions } from "swiper/types";
-import Image from "next/image";
-import { IcCircleArrowLeft } from "@/components/common/resources/icons/IcCircleArrowLeft";
 
-// type Props = {
-//   slides: { src: string; title: string }[];
-//   slidesPerView?: number;
-//   slideClassName?: string;
-//   breakpoints?: {
-//     [width: number]: SwiperOptions;
-//     [ratio: string]: SwiperOptions;
-//   };
-//   className?: string;
-// };
+type Props = {
+  news: News[];
+};
 
-export default function HomepageSwiper() {
-  const id = useId()?.replace(/\W/g, "");
+export default function NewsSwiper({ news }: Props) {
+  const [currentNews, setCurrentNews] = useState(news[0]);
+
+  useEffect(() => {
+    news && setCurrentNews(news[0]);
+  }, [news]);
+
+  const handleSlideChange = (swiper: any) => {
+    const currentIndex = swiper.realIndex;
+    console.log("currentIndex", currentIndex);
+    setCurrentNews(news[currentIndex]);
+  };
+
   return (
-    <>
-      <Swiper
-        navigation={{
-          prevEl: ".prev",
-          nextEl: ".next",
-        }}
-        modules={[Navigation]}
-        loop
-        className="mySwiper h-full w-full relative"
-      >
-        <SwiperSlide>
-          <img
-            className="h-full w-full object-cover"
-            src="/homepage/homepageImage2.jpg"
-            alt="img1"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="h-full w-full object-cover"
-            src="/homepage/homepageImage1.jpg"
-            alt="img2"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="h-full w-full object-cover"
-            src="/homepage/homepageImage3.jpg"
-            alt="img3"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="h-full w-full object-cover"
-            src="/homepage/homepageImage4.jpg"
-            alt="img4"
-          />
-        </SwiperSlide>
-        <div className="flex gap-x-4 absolute bottom-8 right-8 z-[1]">
-          <button className="prev">
-            <IcCircleArrowLeft className="text-primary" />
-          </button>
-          <button className="next">
-            <IcCircleArrowLeft className="rotate-180 text-primary" />
-          </button>
-        </div>
-      </Swiper>
-    </>
+    <div className="grid grid-cols-2 w-full mt-6 gap-x-16 gap-y-5">
+      <div className="flex flex-col col-span-2 lg:col-span-1 justify-end">
+        <div className="font-medium text-2xl mb-4">{currentNews?.title}</div>
+        <p className="text-lg text-[#888888]">
+          {dayjs(currentNews?.updatedAt).format("DD/MM/YYYY")}
+        </p>
+        <button className="flex p-4 w-fit gap-4 items-center font-semibold mt-6 text-white bg-primary text-lg">
+          <div>Chi tiết</div>
+          <IcArrowRight />
+        </button>
+      </div>
+      <div className="w-full col-span-2 lg:col-span-1 aspect-[688/400]">
+        <Swiper
+          navigation={{
+            prevEl: ".prev",
+            nextEl: ".next",
+          }}
+          modules={[Navigation]}
+          loop
+          className="mySwiper h-full w-full relative"
+          onSlideChange={(swiper) => handleSlideChange(swiper)}
+        >
+          {news.map((news) => (
+            <SwiperSlide className="relative w-full h-full" key={news.id}>
+              <Image fill src={`${API_URL}${news.cover?.url}` || ""} alt="" />
+            </SwiperSlide>
+          ))}
+          <div className="flex gap-x-4 absolute bottom-8 right-8 z-[1]">
+            <button className="prev">
+              <IcCircleArrowLeft className="text-primary" />
+            </button>
+            <button className="next">
+              <IcCircleArrowLeft className="rotate-180 text-primary" />
+            </button>
+          </div>
+        </Swiper>
+      </div>
+    </div>
   );
 }

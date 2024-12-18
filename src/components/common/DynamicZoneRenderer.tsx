@@ -1,20 +1,23 @@
 import { API_URL } from "@/constant/app";
-import React from "react";
 import {
-  Business,
-  BusinessContent,
-  ParagraphChild,
+  ArticleContent,
+  ParagraphChild
 } from "@/types/business.interface";
+import Image from "next/image";
+import React from "react";
 
-type BusinessProps = {
-  business: Business;
+type Props = {
+  content: ArticleContent[]
 };
 
-const BusinessContentRenderer: React.FC<BusinessProps> = ({ business }) => {
-  const renderContent = (content: BusinessContent[]) => {
-    return content.map((item, index) => {
+const DynamicZoneRenderer = ({ content }: Props ) => {
+  console.log(content)
+  const renderContent = (content: ArticleContent[]) => {
+    console.log(content)
+    return content?.map((item, index) => {
       switch (item.__component) {
         case "article.paragraph":
+          console.log("okok")
           return item.paragraph.map((paragraph, index) => (
             <div key={index}>
               {paragraph.children.map((child: ParagraphChild, childIdx) => {
@@ -59,9 +62,9 @@ const BusinessContentRenderer: React.FC<BusinessProps> = ({ business }) => {
 
         case "article.single-image":
           return (
-            <div key={index}>
-              <img
-                className="w-full"
+            <div className="relative w-full aspect-video" key={index}>
+              <Image
+                fill
                 src={`${API_URL}${item.image.url}`}
                 alt={item.image.alternativeText || ""}
               />
@@ -69,49 +72,33 @@ const BusinessContentRenderer: React.FC<BusinessProps> = ({ business }) => {
           );
 
         case "article.multiple-images":
-          const gridColsClass = `grid-cols-${Math.min(item.images.length, 3)}`;
           return (
-            <div key={index} className={`md:grid ${gridColsClass} gap-4`}>
+            <div
+              key={index}
+              className={`md:grid ${
+                item.images.length >= 3 ? "grid-cols-3" : "grid-cols-2"
+              } gap-4`}
+            >
               {item.images.map((image) => (
-                <img
-                  key={image.id}
-                  className="w-full h-full object-cover"
-                  src={`${API_URL}${image.url}`}
-                  alt={image.alternativeText || ""}
-                />
+                <div className="relative w-full h-full aspect-[4/3]" key={image.id}>
+                  <Image
+                    fill
+                    src={`${API_URL}${image.url}`}
+                    alt={image.alternativeText || ""}
+                  />
+                </div>
               ))}
             </div>
           );
 
-        // case "article.file":
-        //   if (item.file.ext === ".pdf") {
-        //     return (
-        //       <iframe
-        //         className="h-[800px] w-full"
-        //         src={`${API_URL}${item.file.url}`}
-        //       ></iframe>
-        //     );
-        //   } else {return null}
-
         case "article.file":
-        return (
-          // <div key={index} className="mt-4">
-          //   <a
-          //     href={`${API_URL}${item.file.url}`}
-          //     target="_blank"
-          //     rel="noopener noreferrer"
-          //     className="text-blue-600 underline"
-          //   >
-          //     {item.file.name || "Download File"}
-          //   </a>
-          //   <p className="text-sm text-gray-500">{`Size: ${item.file.size.toFixed(2)} KB`}</p>
-          // </div>
-          <iframe
-          key={index}
-            className="h-[800px] w-full"
-            src={`${API_URL}${item.file.url}#page=1&view=fitH&fitV`}
-          ></iframe>
-        );
+          return (
+            <iframe
+              key={index}
+              className="h-[800px] w-full"
+              src={`${API_URL}${item.file.url}#page=1&view=fitH&fitV`}
+            ></iframe>
+          );
 
         default:
           return null;
@@ -120,8 +107,8 @@ const BusinessContentRenderer: React.FC<BusinessProps> = ({ business }) => {
   };
 
   return (
-    <div className="space-y-8 text-lg">{renderContent(business.content)}</div>
+    <div className="space-y-8 text-lg">{renderContent(content)}</div>
   );
 };
 
-export default BusinessContentRenderer;
+export default DynamicZoneRenderer;
