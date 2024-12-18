@@ -42,7 +42,7 @@ export type RelatedItem = {
   __type: string;
   id: number;
   documentId: string;
-  Title: string;
+  title: string;
   slug: string;
   createdAt: string;
   updatedAt: string;
@@ -119,11 +119,11 @@ export type ArticleContent = ArticleParagraph | ArticleSingleImage | ArticleMult
 export type Business = {
   id: number;
   documentId: string;
-  Title: string;
+  title: string;
   slug: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  Cover_image?: CoverImage;
+  cover?: CoverImage;
   content: ArticleContent[];
 };

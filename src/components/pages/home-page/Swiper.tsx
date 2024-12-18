@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 type Props = {
   news: News[];
@@ -37,10 +38,12 @@ export default function NewsSwiper({ news }: Props) {
         <p className="text-lg text-[#888888]">
           {dayjs(currentNews?.updatedAt).format("DD/MM/YYYY")}
         </p>
-        <button className="flex p-4 w-fit gap-4 items-center font-semibold mt-6 text-white bg-primary text-lg">
-          <div>Chi tiết</div>
-          <IcArrowRight />
-        </button>
+        <Link href={`/tin-tuc/${currentNews?.documentId}`}>
+          <button className="flex p-4 w-fit gap-4 items-center font-semibold mt-6 text-white bg-primary text-lg">
+            <div>Chi tiết</div>
+            <IcArrowRight />
+          </button>
+        </Link>
       </div>
       <div className="w-full col-span-2 lg:col-span-1 aspect-[688/400]">
         <Swiper
@@ -55,7 +58,7 @@ export default function NewsSwiper({ news }: Props) {
         >
           {news.map((news) => (
             <SwiperSlide className="relative w-full h-full" key={news.id}>
-              <Image fill src={`${API_URL}${news.cover?.url}` || ""} alt="" />
+              <Image fill src={`${news.cover?.url}` || ""} alt="" />
             </SwiperSlide>
           ))}
           <div className="flex gap-x-4 absolute bottom-8 right-8 z-[1]">

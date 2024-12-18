@@ -65,7 +65,7 @@ const DynamicZoneRenderer = ({ content }: Props ) => {
             <div className="relative w-full aspect-video" key={index}>
               <Image
                 fill
-                src={`${API_URL}${item.image.url}`}
+                src={`${item.image.url}`}
                 alt={item.image.alternativeText || ""}
               />
             </div>
@@ -83,7 +83,7 @@ const DynamicZoneRenderer = ({ content }: Props ) => {
                 <div className="relative w-full h-full aspect-[4/3]" key={image.id}>
                   <Image
                     fill
-                    src={`${API_URL}${image.url}`}
+                    src={`${image.url}`}
                     alt={image.alternativeText || ""}
                   />
                 </div>
@@ -96,7 +96,7 @@ const DynamicZoneRenderer = ({ content }: Props ) => {
             <iframe
               key={index}
               className="h-[800px] w-full"
-              src={`${API_URL}${item.file.url}#page=1&view=fitH&fitV`}
+              src={`${item.file.url}#page=1&view=fitH&fitV`}
             ></iframe>
           );
 

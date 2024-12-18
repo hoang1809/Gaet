@@ -18,7 +18,7 @@ export const NewsCard = ({ title, date, tags, cover }: Props) => {
       <Image
         fill
         alt="image"
-        src={`${API_URL}${cover?.url}` || ""}
+        src={`${cover?.url}` || ""}
       ></Image>
       </div>
       <div>{tags.map((tag) => tag.name).join("; ")}</div>

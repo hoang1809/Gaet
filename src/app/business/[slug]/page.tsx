@@ -24,12 +24,12 @@ const BusinessDetailPage = ({
         <Skeleton />
       ) : (
         <div>
-          {data?.Cover_image && (
+          {data?.cover && (
             <div className="w-full relative aspect-[1120/450]">
               <Image
                 fill
                 priority
-                src={`${API_URL}${data?.Cover_image.url}`}
+                src={`${data?.cover.url}`}
                 alt="image"
               />
             </div>
@@ -41,7 +41,7 @@ const BusinessDetailPage = ({
           </Link>
           <div className="max-w-[920px] mx-auto">
             <div className="mb-12">
-              <div className="text-[32px] font-bold">{data?.Title}</div>
+              <div className="text-[32px] font-bold">{data?.title}</div>
               <div className="text-[#888] text-[18px] mt-4">
                 {dayjs(data?.updatedAt).format("DD/MM/YYYY")}
               </div>

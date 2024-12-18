@@ -8,7 +8,7 @@ export const getBusinessDetail = async (slug:string) => {
       {
         params: {
           // 'populate[content][populate]': '*',
-          'populate[Cover_image][populate]': '*',
+          'populate[cover][populate]': '*',
           'populate[content][populate]': '*',
           'filters[slug][$eq]': slug,
         },
