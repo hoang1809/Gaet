@@ -56,11 +56,10 @@ export type CoverImage = Image & {
 export interface ParagraphChild {
   type: "text" | "link";
   text?: string; // For plain text
-  url?: string;  // For links
+  url?: string; // For links
   bold?: boolean; // Optional, for bold text
   children?: ParagraphChild[]; // For nested structures (e.g., links containing text)
 }
-
 
 export type Paragraph = {
   type: string;
@@ -68,7 +67,7 @@ export type Paragraph = {
   children: ParagraphChild[];
 };
 
-export type File ={
+export type File = {
   id: number;
   documentId: string;
   name: string;
@@ -85,10 +84,10 @@ export type File ={
   previewUrl?: string | null;
   provider: string;
   provider_metadata?: Record<string, unknown> | null;
-  createdAt: string; // ISO date string
-  updatedAt: string; // ISO date string
-  publishedAt: string; // ISO date string
-}
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+};
 
 export type ArticleParagraph = {
   __component: "article.paragraph";
@@ -114,7 +113,11 @@ export interface ArticleFile {
   file: File;
 }
 
-export type ArticleContent = ArticleParagraph | ArticleSingleImage | ArticleMultipleImages | ArticleFile;
+export type ArticleContent =
+  | ArticleParagraph
+  | ArticleSingleImage
+  | ArticleMultipleImages
+  | ArticleFile;
 
 export type Business = {
   id: number;

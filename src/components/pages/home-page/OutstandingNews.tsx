@@ -1,9 +1,6 @@
 "use client";
-import { IcArrowRight } from "@/components/common/resources/icons/IcArrowRight";
-import { useState } from "react";
-import NewsSwiper from "./Swiper";
 import { useNewsList } from "@/hooks/useNewsList";
-import { News } from "@/types";
+import NewsSwiper from "./Swiper";
 
 const OutstandingNews = () => {
   const { data } = useNewsList();

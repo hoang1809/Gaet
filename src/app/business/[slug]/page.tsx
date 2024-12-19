@@ -1,13 +1,12 @@
 "use client";
-import { use } from "react";
-import { API_URL } from "@/constant/app";
-import { useBusinessDetail } from "@/hooks/useBusinessDetail";
 import DynamicZoneRenderer from "@/components/common/DynamicZoneRenderer";
+import Skeleton from "@/components/pages/business/Skeleton";
+import { useBusinessDetail } from "@/hooks/useBusinessDetail";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import Link from "next/link";
-import Skeleton from "@/components/pages/business/Skeleton";
 import Image from "next/image";
+import Link from "next/link";
+import { use } from "react";
 
 dayjs.extend(customParseFormat);
 

@@ -1,4 +1,3 @@
-import { API_URL } from "@/constant/app";
 import {
   ArticleContent,
   ParagraphChild

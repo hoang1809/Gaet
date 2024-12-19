@@ -1,8 +1,6 @@
-import { API_URL } from "@/constant/app";
 import { News, Tag } from "@/types";
 import dayjs from "dayjs";
 import Image from "next/image";
-import React from "react";
 
 type Props = {
   title: string;
