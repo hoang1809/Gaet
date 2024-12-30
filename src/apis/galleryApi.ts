@@ -6,6 +6,7 @@ export const getVideoGallery = async () => {
     const response = await axios.get(`${API_URL}/api/videos`, {
       params: {
         populate: "*",
+        // sort: "createdAt:desc",
       },
     });
     return response.data.data;

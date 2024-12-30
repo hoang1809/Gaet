@@ -11,6 +11,7 @@ export const getBusinessDetail = async (slug:string) => {
           'populate[cover][populate]': '*',
           'populate[content][populate]': '*',
           'filters[slug][$eq]': slug,
+          // 'sort': 'createdAt:desc',
         },
       }
     );

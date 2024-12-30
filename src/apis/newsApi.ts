@@ -8,6 +8,7 @@ export const getNewsList = async () => {
       {
         params: {
           'populate': '*',
+          'sort': 'createdAt:desc',
         },
       }
     );
