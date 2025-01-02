@@ -1,3 +1,4 @@
+import { getStrapiMedia } from "@/lib/utils";
 import { News, Tag } from "@/types";
 import dayjs from "dayjs";
 import Image from "next/image";
@@ -16,8 +17,8 @@ export const NewsCard = ({ title, date, tags, thumbnail }: Props) => {
       <Image
         fill
         alt="image"
-        src={`${thumbnail?.url ? thumbnail.url : "/"}`}
-      ></Image>
+        src={getStrapiMedia(thumbnail?.url ? thumbnail.url : "/")}
+      />
       </div>
       <div>{tags?.map((tag) => tag.name).join("; ")}</div>
       <div className="text-[#888888]">{dayjs(date).format("DD/MM/YYYY")}</div>

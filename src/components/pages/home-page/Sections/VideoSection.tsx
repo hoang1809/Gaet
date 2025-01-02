@@ -1,5 +1,6 @@
 "use client";
 import { useVideoGallery } from "@/hooks/useVideoGallery";
+import { getStrapiMedia } from "@/lib/utils";
 import React from "react";
 
 const VideoSection = () => {
@@ -19,7 +20,7 @@ const VideoSection = () => {
           <video
             key={video.id}
             className="w-full aspect-video object-cover"
-            src={video.video.url}
+            src={getStrapiMedia(video.video.url)}
             controls
           />
         ))}

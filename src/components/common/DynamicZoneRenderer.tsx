@@ -1,3 +1,5 @@
+import { API_URL } from "@/constant/app";
+import { getStrapiMedia } from "@/lib/utils";
 import {
   ArticleContent,
   ParagraphChild
@@ -64,7 +66,7 @@ const DynamicZoneRenderer = ({ content }: Props ) => {
             <div className="relative w-full aspect-video" key={index}>
               <Image
                 fill
-                src={`${item.image.url}`}
+                src={getStrapiMedia(item.image.url)}
                 alt={item.image.alternativeText || ""}
               />
             </div>
@@ -82,7 +84,7 @@ const DynamicZoneRenderer = ({ content }: Props ) => {
                 <div className="relative w-full h-full aspect-[4/3]" key={image.id}>
                   <Image
                     fill
-                    src={`${image.url}`}
+                    src={`${getStrapiMedia(image.url)}`}
                     alt={image.alternativeText || ""}
                   />
                 </div>

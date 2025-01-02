@@ -2,6 +2,7 @@
 import DynamicZoneRenderer from "@/components/common/DynamicZoneRenderer";
 import Skeleton from "@/components/pages/business/Skeleton";
 import { useBusinessDetail } from "@/hooks/useBusinessDetail";
+import { getStrapiMedia } from "@/lib/utils";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import Image from "next/image";
@@ -28,7 +29,7 @@ const BusinessDetailPage = ({
               <Image
                 fill
                 priority
-                src={`${data?.cover.url}`}
+                src={getStrapiMedia(data?.cover.url)}
                 alt="image"
               />
             </div>
