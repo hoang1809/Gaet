@@ -17,7 +17,7 @@ export type News = {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  cover?: CoverImage;
+  thumbnail?: CoverImage;
   content: ArticleContent[];
-  tags: Tag[];
+  tags?: Tag[];
 };

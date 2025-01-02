@@ -59,7 +59,7 @@ export default function NewsSwiper({ news }: Props) {
         >
           {news.map((news) => (
             <SwiperSlide className="relative w-full h-full" key={news.id}>
-              <Image fill src={news?.cover?.url ? news.cover.url : '/'} alt="" />
+              <Image fill src={news?.thumbnail?.url ? news.thumbnail.url : '/'} alt="" />
             </SwiperSlide>
           ))}
           <div className="flex gap-x-4 absolute bottom-8 right-8 z-[1]">

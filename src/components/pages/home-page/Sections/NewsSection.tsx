@@ -24,7 +24,7 @@ const NewsSection = () => {
                 title={news.title}
                 date={news.createdAt}
                 tags={news.tags}
-                cover={news.cover}
+                thumbnail={news.thumbnail}
               />
             </Link>
           ))}
